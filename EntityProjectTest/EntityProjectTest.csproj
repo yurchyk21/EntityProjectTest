@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Cart.cs" />
+    <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\EFContext.cs" />
     <Compile Include="Entities\FilterName.cs" />
+    <Compile Include="Entities\FilterNameGroups.cs" />
     <Compile Include="Entities\Filters.cs" />
     <Compile Include="Entities\FilterValue.cs" />
     <Compile Include="Entities\Order.cs" />
@@ -61,6 +63,10 @@
     <Compile Include="Migrations\201801251808373_all tables.Designer.cs">
       <DependentUpon>201801251808373_all tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801291717489_Add tblFilterNameGroups.cs" />
+    <Compile Include="Migrations\201801291717489_Add tblFilterNameGroups.Designer.cs">
+      <DependentUpon>201801291717489_Add tblFilterNameGroups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801251808373_all tables.resx">
       <DependentUpon>201801251808373_all tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291717489_Add tblFilterNameGroups.resx">
+      <DependentUpon>201801291717489_Add tblFilterNameGroups.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

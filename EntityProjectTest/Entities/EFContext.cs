@@ -23,6 +23,8 @@ namespace EntityProjectTest.Entities
         public DbSet<Filters> Filters { get; set; }
         public DbSet<FilterValue> FilterValue { get; set; }
         public DbSet<Cart> Cart { get; set; }
+        public DbSet<FilterNameGroup> FilterNameGroup { get; set; }
+        public DbSet<Category> Category { get; set; }
 
     }
 }
