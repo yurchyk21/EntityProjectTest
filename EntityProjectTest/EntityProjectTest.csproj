@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201801291717489_Add tblFilterNameGroups.Designer.cs">
       <DependentUpon>201801291717489_Add tblFilterNameGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801291742226_Add tblCategory.cs" />
+    <Compile Include="Migrations\201801291742226_Add tblCategory.Designer.cs">
+      <DependentUpon>201801291742226_Add tblCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801291717489_Add tblFilterNameGroups.resx">
       <DependentUpon>201801291717489_Add tblFilterNameGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291742226_Add tblCategory.resx">
+      <DependentUpon>201801291742226_Add tblCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
