@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace WPF_Shop_UI
 {
     /// <summary>
@@ -23,6 +24,12 @@ namespace WPF_Shop_UI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ShowFilterNameAddWindow_Click(object sender, RoutedEventArgs e)
+        {
+            Window addwnd = new FilterWorkWindow();
+            addwnd.Show();
         }
     }
 }

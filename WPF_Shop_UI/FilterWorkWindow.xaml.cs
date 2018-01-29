@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using EntityProjectTest;
+using EntityProjectTest.Entities;
 
 namespace WPF_Shop_UI
 {
@@ -22,6 +24,40 @@ namespace WPF_Shop_UI
         public FilterWorkWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnAddFilterName_Click(object sender, RoutedEventArgs e)
+        {
+            using (EFContext context = new EFContext())
+            {
+                string name = txtFilterName.Text;
+                TreeViewItem newChild = new TreeViewItem();
+                newChild.Header = name;
+                TreeViewFilterName.Items.Add(newChild);
+
+                var findFilter = context.FilterName.SingleOrDefault(f => f.Name == name);
+                if (findFilter != null)
+                //{
+                //    FilterName filterName = new FilterName()
+                //    {
+                //        Name = name
+                //    };
+                //    context.FilterName.Add(filterName);
+                //    context.SaveChanges();
+                //}
+                {
+                    MessageBox.Show("Filter already exists");
+                }
+            }
+        }
+
+        private void btnAddFilterValue_Click(object sender, RoutedEventArgs e)
+        {
+            string name = txtFilterValue.Text;
+            TreeViewItem newChild = new TreeViewItem();
+            newChild.Header = name;
+            var Parent = (TreeViewFilterName.SelectedItem as TreeView);
+            Parent.Items.Add(newChild);
         }
     }
 }
