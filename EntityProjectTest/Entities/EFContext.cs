@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using EntityProjectTest.Entities.Views.Filters;
 namespace EntityProjectTest.Entities
 {
 
@@ -14,6 +14,8 @@ namespace EntityProjectTest.Entities
         {
 
         }
+        #region Tables
+
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -25,6 +27,11 @@ namespace EntityProjectTest.Entities
         public DbSet<Cart> Cart { get; set; }
         public DbSet<FilterNameGroup> FilterNameGroup { get; set; }
         public DbSet<Category> Category { get; set; }
+        #endregion
+
+        #region Views
+        public DbSet<VFilterNameGroup> VFilterNameGroup { get; set; }
+        #endregion
 
     }
 }

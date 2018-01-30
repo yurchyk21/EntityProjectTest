@@ -12,9 +12,10 @@
         <Button x:Name="btnAddFilterName" Content="Add" HorizontalAlignment="Left" Margin="214,39,0,0" VerticalAlignment="Top" Width="75" Click="btnAddFilterName_Click"/>
         <TreeView x:Name="TreeViewFilterName" HorizontalAlignment="Left" Height="177" Margin="10,67,0,0" VerticalAlignment="Top" Width="199"/>
         <Label Content="Filter value" HorizontalAlignment="Left" Margin="214,69,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtFilterValue" HorizontalAlignment="Left" Height="23" Margin="214,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtFilterValue" HorizontalAlignment="Left" Height="23" Margin="214,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Loaded="txtFilterValue_Loaded"/>
         <Button x:Name="btnAddFilterValue" Content="Add filter value" HorizontalAlignment="Left" Margin="214,118,0,0" VerticalAlignment="Top" Width="120" Click="btnAddFilterValue_Click"/>
         <Button Content="Save Changes to DB" HorizontalAlignment="Left" Margin="214,222,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnGetParent" Content="Get Parent" HorizontalAlignment="Left" Margin="214,168,0,0" VerticalAlignment="Top" Width="120" Click="btnGetParent_Click"/>
 
     </Grid>
 </Window>

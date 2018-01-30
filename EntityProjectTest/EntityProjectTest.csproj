@@ -59,6 +59,7 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\UserProfile.cs" />
+    <Compile Include="Entities\Views\Filters\VFilterNameGroup.cs" />
     <Compile Include="Migrations\201801251808373_all tables.cs" />
     <Compile Include="Migrations\201801251808373_all tables.Designer.cs">
       <DependentUpon>201801251808373_all tables.cs</DependentUpon>
@@ -70,6 +71,10 @@
     <Compile Include="Migrations\201801291742226_Add tblCategory.cs" />
     <Compile Include="Migrations\201801291742226_Add tblCategory.Designer.cs">
       <DependentUpon>201801291742226_Add tblCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801301823369_Init View vFilterNameGroups.cs" />
+    <Compile Include="Migrations\201801301823369_Init View vFilterNameGroups.Designer.cs">
+      <DependentUpon>201801301823369_Init View vFilterNameGroups.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +93,15 @@
     <EmbeddedResource Include="Migrations\201801291742226_Add tblCategory.resx">
       <DependentUpon>201801291742226_Add tblCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801301823369_Init View vFilterNameGroups.resx">
+      <DependentUpon>201801301823369_Init View vFilterNameGroups.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Migrations\ViewFilters\vFilterNameGroups.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
