@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -73,6 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FilterTreeViewItem.cs" />
     <Compile Include="FilterWorkWindow.xaml.cs">
       <DependentUpon>FilterWorkWindow.xaml</DependentUpon>
     </Compile>
@@ -82,6 +84,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParentViewItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
