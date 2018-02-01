@@ -17,8 +17,8 @@ namespace EntityProjectTest.Entities.Views.Filters
         [Required, StringLength(maximumLength: 250)]
         public string FilterName { get; set; }
 
-        public int FilterValueId { get; set; }
-        [Required, StringLength(maximumLength: 250)]
+        public int? FilterValueId { get; set; }
+        [StringLength(maximumLength: 250)]
         public string FilterValue { get; set; }
 
     }

@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201801301823369_Init View vFilterNameGroups.Designer.cs">
       <DependentUpon>201801301823369_Init View vFilterNameGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802011722151_view change.cs" />
+    <Compile Include="Migrations\201802011722151_view change.Designer.cs">
+      <DependentUpon>201802011722151_view change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801301823369_Init View vFilterNameGroups.resx">
       <DependentUpon>201801301823369_Init View vFilterNameGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011722151_view change.resx">
+      <DependentUpon>201802011722151_view change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
