@@ -16,5 +16,6 @@ namespace WPF_Shop_UI
         {
             return Name;
         }
+        ///
     }
 }
