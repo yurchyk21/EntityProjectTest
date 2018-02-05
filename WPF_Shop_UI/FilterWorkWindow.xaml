@@ -14,6 +14,6 @@
         <Label Content="Filter value" HorizontalAlignment="Left" Margin="214,69,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtFilterValue" HorizontalAlignment="Left" Height="23" Margin="214,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Loaded="txtFilterValue_Loaded"/>
         <Button x:Name="btnAddFilterValue" Content="Add filter value" HorizontalAlignment="Left" Margin="214,118,0,0" VerticalAlignment="Top" Width="120" Click="btnAddFilterValue_Click"/>
-        <Button x:Name="btnGetParent" Content="Delete" HorizontalAlignment="Left" Margin="214,222,0,0" VerticalAlignment="Top" Width="120" Click="btnGetParent_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="214,222,0,0" VerticalAlignment="Top" Width="120" Click="btnDelete_Click"/>
     </Grid>
 </Window>

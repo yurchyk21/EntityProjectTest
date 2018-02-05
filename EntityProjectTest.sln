@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityProjectTest", "Entity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Shop_UI", "WPF_Shop_UI\WPF_Shop_UI.csproj", "{72859D18-C299-4ED2-8814-02EDF3439970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{1106581B-7B84-4E78-9F89-5C955116F4A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{72859D18-C299-4ED2-8814-02EDF3439970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72859D18-C299-4ED2-8814-02EDF3439970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72859D18-C299-4ED2-8814-02EDF3439970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1106581B-7B84-4E78-9F89-5C955116F4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1106581B-7B84-4E78-9F89-5C955116F4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1106581B-7B84-4E78-9F89-5C955116F4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1106581B-7B84-4E78-9F89-5C955116F4A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

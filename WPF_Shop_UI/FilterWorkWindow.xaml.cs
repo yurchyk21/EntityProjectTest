@@ -14,6 +14,10 @@ using System.Windows.Shapes;
 using EntityProjectTest;
 using EntityProjectTest.Entities;
 using System.Transactions;
+using EntityProjectTest.Abstract;
+using EntityProjectTest.Concrete;
+using BLL.Abstract;
+using BLL.Provider;
 
 namespace WPF_Shop_UI
 {
@@ -22,8 +26,10 @@ namespace WPF_Shop_UI
     /// </summary>
     public partial class FilterWorkWindow : Window
     {
+        private readonly IFilterProvider _filterProvider;
         public FilterWorkWindow()
         {
+            _filterProvider = new FilterProvider();
             InitializeComponent();
         }
 
@@ -33,26 +39,14 @@ namespace WPF_Shop_UI
             using (EFContext context = new EFContext())
             {
                 string name = txtFilterName.Text;
-
-                var findFilter = context.FilterName
-                    .SingleOrDefault(f => f.Name == name);
-                if (findFilter == null)
-                {
-                    FilterName filterName = new FilterName()
-                    {
-                        Name = name
-                    };
-                    context.FilterName.Add(filterName);
-                    context.SaveChanges();
-                    FilterTreeViewItem viewItem = new FilterTreeViewItem()
-                    {
-                        Id = filterName.Id.ToString(),
-                        Name = filterName.Name
-                    };
+                var viewItem =  _filterProvider.AddFilterName(name);
+                if (viewItem != null)
+                { 
                     TreeViewItem newCh = new TreeViewItem();
                     newCh.Header = viewItem;
                     TreeViewFilterName.Items.Add(newCh);
                 }
+                else
                 {
                     MessageBox.Show("Filter already exists");
                 }
@@ -64,7 +58,9 @@ namespace WPF_Shop_UI
 
             string name = txtFilterValue.Text;
             var item = TreeViewFilterName.SelectedItem as TreeViewItem;
-
+            if (item == null)
+                return;
+            int selInd = TreeViewFilterName.Items.IndexOf(item);
             if (!(GetSelectedTreeViewItemParent(item) is TreeViewItem))
             {
                 var filterNameId = int.Parse(((FilterTreeViewItem)item.Header).Id);
@@ -85,6 +81,7 @@ namespace WPF_Shop_UI
                     context.SaveChanges();
                 }
                 RefreshTreeView();
+                (TreeViewFilterName.Items[selInd] as TreeViewItem).IsExpanded = true;
             }
         }
 
@@ -92,22 +89,25 @@ namespace WPF_Shop_UI
         public ItemsControl GetSelectedTreeViewItemParent(TreeViewItem item)
         {
             DependencyObject parent = VisualTreeHelper.GetParent(item);
-            while (!(parent is TreeViewItem || parent is TreeView))
-            {
-                parent = VisualTreeHelper.GetParent(parent);
-            }
+                while (!(parent is TreeViewItem || parent is TreeView))
+                {
+                    parent = VisualTreeHelper.GetParent(parent);
+                }
 
-            return parent as ItemsControl;
+                return parent as ItemsControl;
         }
 
-        private void btnGetParent_Click(object sender, RoutedEventArgs e)
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             TreeViewItem item = TreeViewFilterName.SelectedItem as TreeViewItem;
+
             using (EFContext context = new EFContext())
             {
                 if (item != null)
                 {
                     ItemsControl parent = GetSelectedTreeViewItemParent(item);
+                    int parentInd = TreeViewFilterName.Items.IndexOf(parent);
+
                     if (parent != null)
                     {
                         TreeViewItem treeitem = parent as TreeViewItem;
@@ -123,6 +123,8 @@ namespace WPF_Shop_UI
                             context.FilterValue.Remove(deleteValue);
                             context.SaveChanges();
                             RefreshTreeView();
+                            (TreeViewFilterName.Items[parentInd] as TreeViewItem).IsExpanded = true;
+
                         }
                     }
                 }
