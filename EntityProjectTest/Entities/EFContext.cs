@@ -27,6 +27,8 @@ namespace EntityProjectTest.Entities
         public DbSet<Cart> Cart { get; set; }
         public DbSet<FilterNameGroup> FilterNameGroup { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ProductImage> ProductImage { get; set; }
+
         #endregion
 
         #region Views

@@ -59,6 +59,7 @@
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\OrderStatus.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductImage.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\UserProfile.cs" />
     <Compile Include="Entities\Views\Filters\VFilterNameGroup.cs" />
@@ -82,6 +83,10 @@
     <Compile Include="Migrations\201802011722151_view change.Designer.cs">
       <DependentUpon>201802011722151_view change.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802071822357_add tblProductImage.cs" />
+    <Compile Include="Migrations\201802071822357_add tblProductImage.Designer.cs">
+      <DependentUpon>201802071822357_add tblProductImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802011722151_view change.resx">
       <DependentUpon>201802011722151_view change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802071822357_add tblProductImage.resx">
+      <DependentUpon>201802071822357_add tblProductImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

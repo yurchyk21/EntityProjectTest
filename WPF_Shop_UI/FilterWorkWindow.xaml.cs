@@ -63,25 +63,25 @@ namespace WPF_Shop_UI
             int selInd = TreeViewFilterName.Items.IndexOf(item);
             if (!(GetSelectedTreeViewItemParent(item) is TreeViewItem))
             {
-                var filterNameId = int.Parse(((FilterTreeViewItem)item.Header).Id);
-                using (EFContext context = new EFContext())
-                {
-                    FilterValue filterValue = new FilterValue
-                    {
-                        Name = name
-                    };
-                    context.FilterValue.Add(filterValue);
-                    context.SaveChanges();
-                    FilterNameGroup filterNameGroup = new FilterNameGroup
-                    {
-                        FilternameId = filterNameId,
-                        FilterValueId = filterValue.Id
-                    };
-                    context.FilterNameGroup.Add(filterNameGroup);
-                    context.SaveChanges();
-                }
-                RefreshTreeView();
-                (TreeViewFilterName.Items[selInd] as TreeViewItem).IsExpanded = true;
+               // var filterNameId = int.Parse(((FilterTreeViewItem)item.Header).Id);
+                //using (EFContext context = new EFContext())
+                //{
+                //    FilterValue filterValue = new FilterValue
+                //    {
+                //        Name = name
+                //    };
+                //    context.FilterValue.Add(filterValue);
+                //    context.SaveChanges();
+                //    FilterNameGroup filterNameGroup = new FilterNameGroup
+                //    {
+                //        FilternameId = filterNameId,
+                //        FilterValueId = filterValue.Id
+                //    };
+                //    context.FilterNameGroup.Add(filterNameGroup);
+                //    context.SaveChanges();
+                //}
+                //RefreshTreeView();
+                //(TreeViewFilterName.Items[selInd] as TreeViewItem).IsExpanded = true;
             }
         }
 
@@ -111,21 +111,21 @@ namespace WPF_Shop_UI
                     if (parent != null)
                     {
                         TreeViewItem treeitem = parent as TreeViewItem;
-                        FilterTreeViewItem myVal = item.Header as FilterTreeViewItem;
-                        FilterTreeViewItem parentItem = treeitem.Header as FilterTreeViewItem;
-                        var deleteValue = context.FilterValue
-                            .SingleOrDefault(f => f.Id.ToString() == myVal.Id);
-                        var deleteGroup = context.FilterNameGroup
-                            .SingleOrDefault(f => f.FilternameId.ToString() == parentItem.Id && f.FilterValueId == deleteValue.Id);
-                        if (deleteValue != null)
-                        {
-                            context.FilterNameGroup.Remove(deleteGroup);
-                            context.FilterValue.Remove(deleteValue);
-                            context.SaveChanges();
-                            RefreshTreeView();
-                            (TreeViewFilterName.Items[parentInd] as TreeViewItem).IsExpanded = true;
+                        //FilterTreeViewItem myVal = item.Header as FilterTreeViewItem;
+                        //FilterTreeViewItem parentItem = treeitem.Header as FilterTreeViewItem;
+                       // var deleteValue = context.FilterValue
+                       //     .SingleOrDefault(f => f.Id.ToString() == myVal.Id);
+                      //  var deleteGroup = context.FilterNameGroup
+                      //      .SingleOrDefault(f => f.FilternameId.ToString() == parentItem.Id && f.FilterValueId == deleteValue.Id);
+                      //  if (deleteValue != null)
+                        //{
+                        //    context.FilterNameGroup.Remove(deleteGroup);
+                        //    context.FilterValue.Remove(deleteValue);
+                        //    context.SaveChanges();
+                        //    RefreshTreeView();
+                        //    (TreeViewFilterName.Items[parentInd] as TreeViewItem).IsExpanded = true;
 
-                        }
+                        //}
                     }
                 }
             }
@@ -155,14 +155,14 @@ namespace WPF_Shop_UI
                                   select g);
                 foreach (var filterNames in groupNames)
                 {
-                    var FName = new FilterTreeViewItem
-                    {
-                        Id = filterNames.Key.Id.ToString(),
-                        Name = filterNames.Key.Name
-                    };
+                    //var FName = new FilterTreeViewItem
+                    //{
+                    //    Id = filterNames.Key.Id.ToString(),
+                    //    Name = filterNames.Key.Name
+                    //};
 
                     TreeViewItem parent = new TreeViewItem();
-                    parent.Header = FName;
+                    //parent.Header = FName;
                     TreeViewFilterName.Items.Add(parent);
 
                     var fValues = from v in filterNames
@@ -175,14 +175,14 @@ namespace WPF_Shop_UI
                     {
                         if (string.IsNullOrEmpty(filterValue.Key.Name))
                             continue;
-                        var FVal = new FilterTreeViewItem
-                        {
-                            Id = filterValue.Key.Id.ToString(),
-                            Name = filterValue.Key.Name
-                        };
+                        //var FVal = new FilterTreeViewItem
+                        //{
+                        //    Id = filterValue.Key.Id.ToString(),
+                        //    Name = filterValue.Key.Name
+                        //};
 
                         TreeViewItem newChild = new TreeViewItem();
-                        newChild.Header = FVal;
+                       // newChild.Header = FVal;
                         parent.Items.Add(newChild);
 
                     }

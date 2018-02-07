@@ -21,6 +21,7 @@ namespace EntityProjectTest.Entities
         public int Quantity { get; set; }
         public float Price { get; set; }
         public DateTime DateCreate { get; set; }
-        public ICollection<Filters> Filters { get; set; }
+        public virtual ICollection<Filters> Filters { get; set; }
+        public virtual ICollection<ProductImage> ProductImage { get; set; }
     }
 }
