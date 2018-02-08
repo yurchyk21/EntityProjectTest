@@ -14,17 +14,17 @@ namespace WPF_Shop_UI
     {
         private string _path;
         private string _pathOriginal; // путь к оригинальной фотке
-                                      //private Uri _source;
+        //private Uri _source;
         private BitmapFrame _image;
 
         public Photo(string path)
         {
             _pathOriginal = path;
-            _path = Environment.CurrentDirectory + ConfigurationManager.AppSettings["ImagePath"].ToString() + Guid.NewGuid().ToString() + ".jpg";
+            _path = "c:\\images\\" + Guid.NewGuid().ToString() + ".jpg";//Environment.CurrentDirectory + ConfigurationManager.AppSettings["ImagePath"].ToString() + Guid.NewGuid().ToString() + ".jpg";
 
             using (var image = System.Drawing.Image.FromFile(_pathOriginal))
             {
-                var newImageSmall = ImageWorker.ConverImageToBitmap(image, 320, 240);
+                var newImageSmall = ImageWorker.ConverImageToBitmap(image, 130, 130);
                 if (newImageSmall != null)
                 {
                     newImageSmall.Save(_path, System.Drawing.Imaging.ImageFormat.Jpeg);

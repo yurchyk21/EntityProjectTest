@@ -13,5 +13,7 @@ namespace WPF_Shop_UI
     /// </summary>
     public partial class App : Application
     {
+   
+
     }
 }

@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Photo.cs" />
+    <Compile Include="PhotoCollection.cs" />
     <Compile Include="ProductAddWindow.xaml.cs">
       <DependentUpon>ProductAddWindow.xaml</DependentUpon>
     </Compile>

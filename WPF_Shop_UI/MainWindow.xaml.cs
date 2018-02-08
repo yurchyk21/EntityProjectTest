@@ -31,5 +31,20 @@ namespace WPF_Shop_UI
             Window addwnd = new FilterWorkWindow();
             addwnd.Show();
         }
+
+        private void AutoContentWindow_Click(object sender, RoutedEventArgs e)
+        {
+            Window autownd = new AutoCompleteWnd();
+            autownd.Show();
+        }
+
+        private void ProdAddWnd_Click(object sender, RoutedEventArgs e)
+        {
+            ProductAddWindow PAwnd = new ProductAddWindow();
+            PAwnd.Show();
+            //PAwnd.Photos = (PhotoCollection)(this.Resources["Photos"] as ObjectDataProvider).Data;
+            //PAwnd.Photos.Path = Environment.CurrentDirectory + "\\images";
+        }
+
     }
 }
